@@ -1,0 +1,22 @@
+@use "./assets/sass/variables" as *;
+
+
+.app {
+    color: $color-black;
+    header{
+        font-size: 3rem;
+        text-align: center;
+    }
+    main{
+        // display:grid;
+        // grid-template-columns: 1fr,5fr;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .app {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+}

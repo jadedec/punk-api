@@ -1,0 +1,10 @@
+@use "../../assets/sass/variables" as *;
+
+.cardList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 2rem;
+    row-gap: 3rem;
+    
+}
