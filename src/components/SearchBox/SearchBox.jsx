@@ -1,19 +1,19 @@
 import "./SearchBox.scss";
 
-const SearchBox = ({searchItem,handleInput}) => {
+const SearchBox = ({search,handleInput}) => {
 
     return (
         <form className="search-box">
             <label
-                htmlFor={searchItem}
+                htmlFor={search}
                 className="search-box__label">
-                {searchItem}
+                {search}
             </label>
             <input
                 type="text"
                 placeholder="Search..."
                 onInput={handleInput}
-                value={searchItem}
+                value={search}
             />
         </form>
     )

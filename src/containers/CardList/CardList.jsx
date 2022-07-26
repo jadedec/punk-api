@@ -1,5 +1,5 @@
 import "./CardList.scss";
-import Card from "../Card/Card";
+import Card from "../../components/Card/Card"
 
 const CardList = ({ beersArr }) => {
     const cardListJSX = beersArr.map((beer, index) => {
@@ -8,8 +8,11 @@ const CardList = ({ beersArr }) => {
                 key={beer.id}
                 name={beer.name}
                 img={beer.image_url}
-                abv={beer.abv}
-                description={beer.description}
+                ABV={beer.abv}
+                IBU={beer.ibu}
+                EBC={beer.ebc}
+                pH={beer.ph}
+                brewYear={beer.first_brewed}
             />
         )
     })
