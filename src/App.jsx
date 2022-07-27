@@ -26,7 +26,8 @@ const App = () => {
 
   //handle function
   const handleInput = (event) => {
-    setSearch(event.target.value)
+    const cleanInput = event.target.value.toLowerCase();
+    setSearch(cleanInput);
   }
   const handleABVFilter = () => {
     setABVFilter(!ABVFilter)
@@ -44,32 +45,52 @@ const App = () => {
     setEBCFilter(!EBCFilter)
   }
 
-
-
   //API fetch request
-  const getBeers = async (search,ABVFilter,classicFilter,IBUFilter,EBCFilter,acidityFilter) => {
-    let url = "https://api.punkapi.com/v2/beers";
-
-    (search) && (url += `&?beer_name=${search}`);
-    (ABVFilter) && (url += "?&abv_gt=6");
-    (classicFilter) && (url += "&brewed_before=01-2010");
-    (IBUFilter) && (url += "&?ibu_gt=60");
-    (EBCFilter) && (url += "&?ebv_gt=100");
-    //API parameters didn't work for acidity filter
-    (acidityFilter) && (beers.filter((beer) => {
-      return (beer.ph && beer.ph < 4)
-    }))
-
-    const response = await fetch(url);
-    const data = await response.json();
-    setBeers(data);
+  const getBeers = async () => {
+    //loop through all the data
+    const arr = [];
+    for (let i = 1; i < 6;i++){
+      let url = `https://api.punkapi.com/v2/beers?page=${i}&per_page=80`;
+      let response = await fetch(url);
+      let data = await response.json();
+      Array.prototype.push.apply(arr, data);
+    }
+    setBeers(arr);
   };
 
   //avoid rerender
   useEffect(() => {
-    getBeers(search,ABVFilter,classicFilter,IBUFilter,EBCFilter,acidityFilter)
-  }, [search,ABVFilter,classicFilter,IBUFilter,EBCFilter,acidityFilter]);
+    getBeers()
+  }, []);
   
+
+
+  //filter function (can't get over 80 result at one time, so use filter instead)
+
+  // const filterBeers = ((search,ABVFilter,classicFilter,IBUFilter,EBCFilter,acidityFilter))=>{beers.filter((beer) => {
+  //   if (search) {
+  //     const beerNameLower = beer.name.toLowerCase();
+  //     return beerNameLower.includes(search)
+  //   }
+  //   if (ABVFilter) {
+  //     return beer.abv > 6
+  //   }
+  //   if (IBUFilter) {
+  //     return beer.ibu > 60
+  //   }
+  //   if (EBCFilter) {
+  //     return beer.ebc > 100
+  //   }
+  //   if (acidityFilter) {
+  //     return beer.ph < 4
+  //   }
+  //
+  //   //if(classicFilter){
+  //      const beerBrewYear = parseInt(beer.first_brewed.substring(3,6));
+  //      return beerBrewYear < 2010
+  // }
+  // });
+  // setBeers(filterBeers);
 
   return (
     <>

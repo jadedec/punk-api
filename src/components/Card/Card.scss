@@ -2,7 +2,6 @@
 
 
 .card{
-    position: relative;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 10px 20px rgba($color-black, 0.25);
@@ -10,11 +9,11 @@
     height:26rem;
     text-align: center;
     
-    &__img{
+    &-img{
         margin-top: 20px;
         max-height: 20rem;
     }
-    &__name{
+    &-name{
         font-size: 1.2rem;
         height: 3rem;
     }
@@ -22,6 +21,9 @@
     &-content{
         position: absolute;
         display: none;
+        width:17rem;
+        height:26rem;
+        background-color: rgba($color-black, 0.5);
 
         &__name{
             margin: 20px 0;
@@ -50,10 +52,11 @@
             border: 2px solid $color-primary;
         }
     }
-
-    //TODO: hover CSS fixed
     &:hover > &-content{
         display: flex;
         flex-direction: column;
-    }
+        }
+    &:hover> &-name{
+            display: none;
+        }
 }
