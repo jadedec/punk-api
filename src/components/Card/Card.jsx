@@ -1,7 +1,7 @@
 import "./Card.scss";
 import beer from "../../assets/images/beer.svg"
 
-const Card = ({name,img,ABV,IBU,EBC,pH,brewYear}) => {
+const Card = ({name,img,ABV,IBU,EBC,pH,brewYear,tagline}) => {
     
     return (
         <div className="card">
@@ -14,6 +14,7 @@ const Card = ({name,img,ABV,IBU,EBC,pH,brewYear}) => {
                 alt={name}
                 />}
             <h3 className="card-name">{name}</h3>
+
             <div className="card-content">
             <h3 className="card-content__name">{name}</h3>
             <p className="card-content__character">ABV: {ABV} </p>
@@ -21,6 +22,7 @@ const Card = ({name,img,ABV,IBU,EBC,pH,brewYear}) => {
             <p className="card-content__character">EBC: {EBC}</p>
             <p className="card-content__character">pH: {pH}</p>
             <p className="card-content__character">First Brewed: {brewYear}</p>
+            <p className="card-content__character card-content__character-tagline">{tagline}</p>
             <button className="card-content__button">DETAIL</button>
             </div>
         </div>

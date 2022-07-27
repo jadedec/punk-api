@@ -5,9 +5,8 @@ const SearchBox = ({search,handleInput}) => {
     return (
         <form className="search-box">
             <label
-                htmlFor={search}
+                htmlFor="searchBox"
                 className="search-box__label">
-                {search}
             </label>
             <input
                 type="text"

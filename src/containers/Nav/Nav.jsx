@@ -6,17 +6,17 @@ import FilterBoxes from "../../components/FilterBoxes/FilterBoxes";
 
 const Nav = ({ search, handleInput, handleABVFilter,handleAcidityFilter,handleClassicFilter,handleEBCFilter,handleIBUFilter}) => {
     return (
-        <nav className="nav">
+        <nav className="filter">
 
-            <label htmlFor="filter">YOUR CHOICE:</label>
-            <SearchBox handleInput={handleInput} search={search} />
+            <label htmlFor="filter" className="filter-search">YOUR CHOICE:</label>
+            <SearchBox handleInput={handleInput} search={search} className="filter-search" />
             
             <div className="filter-boxList">
-                <FilterBoxes label={"High Alcohol" } handleFilter={ handleABVFilter} />
-                <FilterBoxes label={ "High Acidity"} handleFilter={ handleAcidityFilter} />
-                <FilterBoxes label={ "Classic Range"} handleFilter={ handleClassicFilter} />
-                <FilterBoxes label={ "High darkness"} handleFilter={ handleEBCFilter} />
-                <FilterBoxes label={ "High Bitterness"} handleFilter={handleIBUFilter} />
+                <FilterBoxes label={"High Alcohol" } handleFilter={ handleABVFilter} className="filter-boxList__item"/>
+                <FilterBoxes label={ "High Acidity"} handleFilter={ handleAcidityFilter} className="filter-boxList__item"/>
+                <FilterBoxes label={ "Classic Range"} handleFilter={ handleClassicFilter} className="filter-boxList__item"/>
+                <FilterBoxes label={ "High darkness"} handleFilter={ handleEBCFilter} className="filter-boxList__item"/>
+                <FilterBoxes label={ "High Bitterness"} handleFilter={handleIBUFilter} className="filter-boxList__item"/>
             </div>
         </nav>
     );

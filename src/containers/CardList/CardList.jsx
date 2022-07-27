@@ -13,6 +13,7 @@ const CardList = ({ beersArr }) => {
                 EBC={beer.ebc}
                 pH={beer.ph}
                 brewYear={beer.first_brewed}
+                tagline={beer.tagline}
             />
         )
     })
