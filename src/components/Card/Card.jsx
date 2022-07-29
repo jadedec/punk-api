@@ -1,5 +1,5 @@
 import "./Card.scss";
-import beer from "../../assets/images/beer.svg"
+import beer from "../../assets/images/brewdog.png"
 
 const Card = ({name,img,ABV,IBU,EBC,pH,brewYear,tagline}) => {
     

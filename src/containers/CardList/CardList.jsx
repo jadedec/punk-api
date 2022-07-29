@@ -17,10 +17,13 @@ const CardList = ({ beersArr }) => {
             />
         )
     })
+//TODO: make the message working
+    const message = (<p >Sorry. No beer has been found.</p>);
     
     return (
         <div className="cardList">
-            {cardListJSX}
+            {beersArr ? cardListJSX : message}
+            
         </div>
     )
     

@@ -1,0 +1,30 @@
+@use "../../assets/sass/_variables.scss" as *;
+
+.nav {
+    position:fixed;
+    width:100%;
+    overflow: hidden;
+    background-color: $color-black;
+    height:2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+&__item {
+    margin: 20px 20px;
+    max-height: 100%;
+    &:hover{
+        background-color: $color-primary;
+    } 
+}
+
+&__heading{
+    color:$color-white;
+}
+}
+
+@media screen and (min-width: 992px) {
+.nav {
+    grid-column: 1 / -1;
+}
+}

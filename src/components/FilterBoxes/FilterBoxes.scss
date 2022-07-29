@@ -1,10 +1,16 @@
 @use "../../assets/sass/_variables.scss" as *;
 
-filter-box {
+.filter-box {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   &__label {
-    margin-left: 5px;
-    margin-right: 10px;
+    // margin: 0 20px;
+    font-size: 1.2rem;
+    width: 9.5rem;
+    line-height:2rem;
+    font-weight: bold;
+  }
+  &__checkbox{
+    
   }
 }

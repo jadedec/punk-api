@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 // import beers from "./data/beers";
 
 import CardList from "./containers/CardList/CardList";
-import Nav from "./containers/Nav/Nav";
+import Nav from "./containers/Navbar/Navbar";
 
 const App = () => {
 
@@ -83,8 +83,6 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <header>PUNK</header>
-        <main>
           <Nav
             search={search}
             handleInput={handleInput}
@@ -94,9 +92,8 @@ const App = () => {
             handleEBCFilter={handleEBCFilter}
             handleIBUFilter={handleIBUFilter}
           />
-
-          {beers!==[] ? <CardList beersArr={filterBeer} /> : <p>Sorry. No beer has been found.</p>}
-        </main>
+          
+          <CardList beersArr={filterBeer} />
       </div>
     </>
   );
