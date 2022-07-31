@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Card = ({id,name,img,ABV,IBU,EBC,pH,brewYear,tagline}) => {
     
     const buttonJSX = (
-        <Link to={`/punk-api/beer/${id}`}>
+        <Link to={`/punk-api/beer/${id}`} key={id}>
             <button className="card-content__button">DETAIL</button>
         </Link>
     )
