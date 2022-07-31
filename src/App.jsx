@@ -105,19 +105,14 @@ const App = () => {
         />
 
         <Routes>
-
           <Route
             path="/punk-api"
-            element={
-              <CardList beersArr={filterBeer} />
-            }
+            element={<CardList beersArr={filterBeer}/>}
           />
 
           <Route
             path="/punk-api/beer/:beerId"
-            element={
-              <BeerInfo beersArr={filterBeer} />
-            }
+            element={<BeerInfo beersArr={filterBeer}/>}
           />
 
         </Routes>
