@@ -1,4 +1,5 @@
 @use "../../assets/sass/_variables.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
 .nav {
     position:fixed;
@@ -20,6 +21,9 @@
 
 &__heading{
     color:$color-white;
+    font-size: 2rem;
+    font-family: 'Mochiy Pop One', sans-serif;
+    text-decoration: none;
 }
 }
 

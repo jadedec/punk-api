@@ -1,11 +1,12 @@
 import "./Navbar.scss";
 import menu from "../../assets/images/menu.svg";
-
-import { useState } from "react";
-import Menu from "../../components/Menu/Menu";
 import logo from "../../assets/images/logo.png"
 
-const Nav = ({search, handleInput, handleABVFilter,handleAcidityFilter,handleClassicFilter,handleEBCFilter,handleIBUFilter}) => {
+import Menu from "../../components/Menu/Menu";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const Nav = ({search, handleInput, handleABVFilter,handleAcidityFilter,handleClassicFilter,handleEBCFilter,handleIBUFilter,reset}) => {
 
 const [showMenu, setShowMenu] = useState(false);
 const toggleMenu = () => {
@@ -25,7 +26,9 @@ return (
             handleIBUFilter={handleIBUFilter}
         />}
         <img onClick={toggleMenu} src={menu} className="nav__item" alt="menu icon" />
-        <h2 className="nav__heading">PUNK </h2>
+        <Link to="/punk-api" className="nav__heading" onClick={reset}>
+            PUNK 
+        </Link>
         <img src={logo} className="nav__item" alt="punk logo" />
     </nav>
 );

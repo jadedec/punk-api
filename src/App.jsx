@@ -1,9 +1,11 @@
 import "./App.scss";
-import { useState,useEffect } from "react";
-// import beers from "./data/beers";
-
 import CardList from "./containers/CardList/CardList";
 import Nav from "./containers/Navbar/Navbar";
+import BeerInfo from "./containers/BeerInfo/BeerInfo";
+
+import { useState, useEffect } from "react";
+//install before import
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 
 const App = () => {
 
@@ -43,6 +45,14 @@ const App = () => {
   const handleEBCFilter = () => {
     setEBCFilter(!EBCFilter)
   }
+  const handleReset = () => {
+    setSearch("");
+    setABVFilter(false);
+    setClassicFilter(false);
+    setAcidityFilter(false);
+    setIBUFilter(false);
+    setEBCFilter(false);
+  }
 
   //API fetch request
   const getBeers = async (ABVFilter, classicFilter, IBUFilter, EBCFilter) => {
@@ -81,21 +91,38 @@ const App = () => {
   }))
 
   return (
-    <>
+    <Router>
       <div className="app">
-          <Nav
-            search={search}
-            handleInput={handleInput}
-            handleABVFilter={handleABVFilter}
-            handleAcidityFilter={handleAcidityFilter}
-            handleClassicFilter={handleClassicFilter}
-            handleEBCFilter={handleEBCFilter}
-            handleIBUFilter={handleIBUFilter}
+        <Nav
+          search={search}
+          handleInput={handleInput}
+          handleABVFilter={handleABVFilter}
+          handleAcidityFilter={handleAcidityFilter}
+          handleClassicFilter={handleClassicFilter}
+          handleEBCFilter={handleEBCFilter}
+          handleIBUFilter={handleIBUFilter}
+          reset={handleReset}
+        />
+
+        <Routes>
+
+          <Route
+            path="/punk-api"
+            element={
+              <CardList beersArr={filterBeer} />
+            }
           />
-          
-          <CardList beersArr={filterBeer} />
+
+          <Route
+            path="/punk-api/beer/:beerId"
+            element={
+              <BeerInfo beersArr={filterBeer} />
+            }
+          />
+
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 };
 
