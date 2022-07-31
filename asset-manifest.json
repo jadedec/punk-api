@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/punk-api/static/css/main.d69743e0.css",
-    "main.js": "/punk-api/static/js/main.12821f46.js",
+    "main.css": "/punk-api/static/css/main.4bf85f05.css",
+    "main.js": "/punk-api/static/js/main.2e6c4480.js",
     "static/js/787.ae7c3095.chunk.js": "/punk-api/static/js/787.ae7c3095.chunk.js",
-    "static/media/beer.svg": "/punk-api/static/media/beer.0fe09421c2375a77b14a88e0251486ac.svg",
+    "static/media/logo.png": "/punk-api/static/media/logo.c8930e54f55b2147efac.png",
+    "static/media/brewdog.png": "/punk-api/static/media/brewdog.4212fd62b55ddafcebac.png",
     "index.html": "/punk-api/index.html",
-    "main.d69743e0.css.map": "/punk-api/static/css/main.d69743e0.css.map",
-    "main.12821f46.js.map": "/punk-api/static/js/main.12821f46.js.map",
+    "static/media/menu.svg": "/punk-api/static/media/menu.8c4755012640aef7236fdc6854b9cfd9.svg",
+    "static/media/close.svg": "/punk-api/static/media/close.4e4283f0ad6a4d7ca3755fa4fb7d39d1.svg",
+    "main.4bf85f05.css.map": "/punk-api/static/css/main.4bf85f05.css.map",
+    "main.2e6c4480.js.map": "/punk-api/static/js/main.2e6c4480.js.map",
     "787.ae7c3095.chunk.js.map": "/punk-api/static/js/787.ae7c3095.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d69743e0.css",
-    "static/js/main.12821f46.js"
+    "static/css/main.4bf85f05.css",
+    "static/js/main.2e6c4480.js"
   ]
 }
